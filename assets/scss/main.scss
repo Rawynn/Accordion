@@ -1,0 +1,178 @@
+@import '~vuetify/src/styles/styles.sass';
+@import '@/assets/variables.scss';
+@import 'main-variables.scss';
+
+#app {
+  font-family: 'Work Sans', sans-serif;
+  color: $main-color;
+}
+
+h1 {
+  font-size: 40px;
+  color: $main-color-dark;
+  margin-bottom: 34px;
+  line-height: 41px;
+}
+
+h2 {
+  font-size: 14px;
+  color: $main-color-pink;
+  margin-bottom: 9px;
+}
+
+h3 {
+  font-size: 21px;
+  line-height: 120%;
+}
+
+p {
+  color: $main-color-gray-light;
+  line-height: 26px;
+}
+
+.font-weight-medium-bold {
+  font-weight: 600;
+}
+
+.columns--two {
+  min-height: 769px;
+  height: 100vh;
+  padding: 0 6.4%;
+  gap: 10%;
+  .column {
+    .v-expansion-panels {
+      .v-expansion-panel {
+        background-color: $panel-background-color;
+
+        &--active {
+          background-color: $panel-background-color-opened;
+        }
+      }
+    }
+
+    &.column--right {
+      max-width: 456px;
+      padding-left: 28px;
+      padding-right: 28px;
+    }
+
+    &__image {
+      transition: 1s;
+      opacity: 1;
+    }
+  }
+}
+
+.panel__image.v-image {
+  display: none;
+}
+
+.v-expansion-panels {
+  row-gap: 20px;
+
+  .v-expansion-panel {
+    &::before,
+    &::after {
+      content: none !important;
+    }
+  }
+
+  .v-expansion-panel-content {
+    p {
+      margin: 0;
+    }
+
+    &__wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 0 55px 38px 18px;
+    }
+  }
+
+  .v-expansion-panel-header {
+    padding: 18px;
+    transition: 0.3s;
+
+    &--active {
+      padding-bottom: 15px;
+      h3 {
+        color: $main-color-blue;
+      }
+    }
+
+    &__icon {
+      .v-icon {
+        &::before {
+          content: url('@/assets/icons/icon.svg');
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .columns--two {
+    padding: 0;
+    gap: 0;
+
+    .column {
+      .column__image {
+        max-width: 400px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 28px;
+    padding-right: 20px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .columns--two {
+    padding-top: 40px;
+    .column {
+      &.column--left {
+        display: none !important;
+      }
+      &--right {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .panel__image.v-image {
+    display: block;
+  }
+
+  .panel__image {
+    margin: 0 auto;
+  }
+
+  .v-expansion-panels {
+    .v-expansion-panel-content {
+      &__wrap {
+        padding: 0 18px 38px 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .columns--two {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .panel__image {
+    max-height: 120px !important;
+    min-height: 10px !important;
+  }
+}

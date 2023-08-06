@@ -2,3 +2,28 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+
+.v-application {
+  .v-expansion-panel--active:not(:first-child),
+  .v-expansion-panel--active + .v-expansion-panel {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1264px) {
+  .v-application .container {
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .v-application .container {
+    max-width: 1440px;
+  }
+}
+
+@media (min-width: 1904px) {
+  .v-application .container {
+    max-width: 1440px;
+  }
+}
