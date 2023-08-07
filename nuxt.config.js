@@ -1,5 +1,3 @@
-import colors from 'vuetify/es5/util/colors'
-
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -23,8 +21,21 @@ export default {
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap',
+        media: 'print',
+        onload: 'this.media="all"',
+        defer: true,
       },
     ],
+  },
+  render: {
+    // Set caching headers for generated HTML pages
+    http2: {
+      push: true,
+      cache: {
+        max: 100,
+        immutable: true,
+      },
+    },
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -44,7 +55,6 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    '@nuxtjs/style-resources',
   ],
 
   styleResources: {
@@ -67,6 +77,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {},
+    defaultAssets: false,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
